@@ -4,20 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TV Show Project | Pakize Bozkurt (PakizeBozkurt)</title>
+  <title>TV Show Project | Oguzhan Bozkurt (Oguzhan Bozkurt)</title>
   <link href="style.css" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
+<header>
+  <h1> TV Shows!</h1>
+  <img src="https://media.gq.com/photos/5df5a3794e7a380009b83bbd/master/w_2000,h_1125,c_limit/BestShows.jpg" alt="tv image">
+  <footer class="footer">
+    This content is from <a href="https://www.tvmaze.com/">TV MAZE</a>
+  </footer>
+</header>
 
 <body>
 
   <div id="root">
-    <select id="selectShow"></select>
-    <input id="SearchInput" type="text" placeholder="Search..." />
-    <span id="countDisplay"> </span>
-    <div id="episodes">
-
+    <div id="controls">
+      <select id="showSelect"></select>
+      <select id="episodeSelect"></select>
+      <input id="searchInput" type="text" placeholder="Search for..." />
+      <span id="countDisplay"></span>
     </div>
+    <div id="episodes"></div>
+  </div>
+  <script src="script.js"></script>
   </div>
 
   <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
