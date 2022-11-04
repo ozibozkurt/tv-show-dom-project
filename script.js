@@ -10,6 +10,7 @@ function setup() {
       makePageForEpisodes(showList);
       select(showList);
       selectEpisode();
+      clickAllShow(showList);
     });
   search();
 }
@@ -51,7 +52,6 @@ function makePageForEpisodes(episodeList) {
     summary.innerHTML = episode.summary;
     card.appendChild(summary);
     container.appendChild(card);
-    
   });
 }
 function select(shows) {
@@ -116,18 +116,13 @@ function search() {
     });
 }
 
+function clickAllShow(shows) {
+  const container = document.getElementById("back-toshows");
+  container.addEventListener("click", (event) => {
+    const container = document.getElementById("episodes");
+    container.innerHTML = "";
+    makePageForEpisodes(shows);
+  });
+}
+
 window.onload = setup;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
