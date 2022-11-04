@@ -15,11 +15,9 @@ function setup() {
 }
 
 function makePageForEpisodes(episodeList) {
-  console.log("length", episodeList.length);
-  const displayNumber = document.createElement("span");
-  displayNumber.innerText = `Displaying ${episodeList.length} episodes`;
-  let input = document.getElementById("countDisplay");
-  input.appendChild(displayNumber);
+  document.getElementById(
+    "countDisplay"
+  ).innerText = `Displaying ${episodeList.length} / ${episodeList.length} episodes`;
   const container = document.getElementById("episodes");
   episodeList.forEach((episode) => {
     const card = document.createElement("div");
@@ -28,6 +26,22 @@ function makePageForEpisodes(episodeList) {
     title.className = "title";
     title.innerText = episode.name;
     card.appendChild(title);
+    let rate = document.createElement("p");
+    rate.innerHTML = `Rating: ${episode.rating.average}`;
+    card.appendChild(rate);
+    console.log(episodeList);
+    let genre = document.createElement("p");
+    genre.innerHTML = `Genre(s): ${episode.genres}`;
+    card.appendChild(genre);
+    console.log(episodeList);
+    let status = document.createElement("p");
+    status.innerHTML = `Status: ${episode.status}`;
+    card.appendChild(status);
+    console.log(episodeList);
+    let runTime = document.createElement("p");
+    runTime.innerHTML = `Runtime: ${episode.runtime}`;
+    card.appendChild(runTime);
+    console.log(episodeList);
     const image = document.createElement("img");
     image.className = "image";
     image.src = episode.image.medium;
@@ -37,6 +51,7 @@ function makePageForEpisodes(episodeList) {
     summary.innerHTML = episode.summary;
     card.appendChild(summary);
     container.appendChild(card);
+    
   });
 }
 function select(shows) {
@@ -102,3 +117,17 @@ function search() {
 }
 
 window.onload = setup;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
